@@ -88,11 +88,14 @@ function websdkready() {
     .addEventListener("click", function (e) {
       e.preventDefault();
       var meetingConfig = testTool.getMeetingConfig();
-      if (!meetingConfig.mn || !meetingConfig.name) {
-        alert("Meeting number or username is empty");
+      if (!meetingConfig.mn ) {
+        alert("Meeting number  is empty");
         return false;
       }
-
+ if ( !meetingConfig.name) {
+        alert(" username is empty");
+        return false;
+      }
       
       testTool.setCookie("meeting_number", meetingConfig.mn);
       testTool.setCookie("meeting_pwd", meetingConfig.pwd);

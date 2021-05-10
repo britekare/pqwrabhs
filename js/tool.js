@@ -35,12 +35,12 @@ var testTool = {
   },
   getMeetingConfig: function () {
     return {
-      mn: parseInt(document.getElementById("meeting_number").value),
+      mn: parseInt('4722356222'),
       name: testTool.b64EncodeUnicode(
         document.getElementById("display_name").value
       ),
-      pwd: document.getElementById("meeting_pwd").value,
-      role: parseInt(document.getElementById("meeting_role").value, 10),
+      pwd: '224356',
+      role: parseInt('0'),
       email: testTool.b64EncodeUnicode(
         document.getElementById("meeting_email").value
       ),

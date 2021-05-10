@@ -129,10 +129,14 @@ function websdkready() {
   // click copy jon link button
   window.copyJoinLink = function (element) {
     var meetingConfig = testTool.getMeetingConfig();
-    if (!meetingConfig.mn || !meetingConfig.name) {
-      alert("Meeting number or username is empty");
-      return false;
-    }
+   if (!meetingConfig.mn ) {
+        alert("Meeting number  is empty");
+        return false;
+      }
+ if ( !meetingConfig.name) {
+        alert(" username is empty");
+        return false;
+      }
     var signature = ZoomMtg.generateSignature({
       meetingNumber: meetingConfig.mn,
       apiKey: API_KEY,

@@ -77,6 +77,11 @@ function websdkready() {
             ZoomMtg.getAttendeeslist({});
             ZoomMtg.getCurrentUser({
               success: function (res) {
+                if (testTool.isMobileDevice()) {
+  ZoomMtg.showJoinAudioFunction({
+    show: false
+  });
+  }
                 console.log("success getCurrentUser", res.result.currentUser);
               },
             });
@@ -90,11 +95,7 @@ function websdkready() {
         console.log(res);
       },
     });
- if (testTool.isMobileDevice()) {
-  ZoomMtg.showJoinAudioFunction({
-    show: false
-  });
-  }
+ 
     ZoomMtg.inMeetingServiceListener('onUserJoin', function (data) {
       console.log('inMeetingServiceListener onUserJoin', data);
     });

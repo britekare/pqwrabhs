@@ -90,7 +90,11 @@ function websdkready() {
         console.log(res);
       },
     });
-
+ if (testTool.isMobileDevice()) {
+  ZoomMtg.showJoinAudioFunction({
+    show: false
+  });
+  }
     ZoomMtg.inMeetingServiceListener('onUserJoin', function (data) {
       console.log('inMeetingServiceListener onUserJoin', data);
     });

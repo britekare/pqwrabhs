@@ -64,6 +64,11 @@ function websdkready() {
         console.log("signature", signature);
         ZoomMtg.i18n.load(meetingConfig.lang);
         ZoomMtg.i18n.reload(meetingConfig.lang);
+         if (testTool.isMobileDevice()) {
+  ZoomMtg.showJoinAudioFunction({
+    show: false
+  });
+  }
         ZoomMtg.join({
           meetingNumber: meetingConfig.meetingNumber,
           userName: meetingConfig.userName,
@@ -75,10 +80,7 @@ function websdkready() {
             console.log("join meeting success");
             console.log("get attendeelist");
             ZoomMtg.getAttendeeslist({});
-          
-  ZoomMtg.showJoinAudioFunction({
-    show: false
-  });
+
   
             ZoomMtg.getCurrentUser({
               success: function (res) {

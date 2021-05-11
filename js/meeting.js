@@ -65,9 +65,7 @@ function websdkready() {
         ZoomMtg.i18n.load(meetingConfig.lang);
         ZoomMtg.i18n.reload(meetingConfig.lang);
         
-  ZoomMtg.showJoinAudioFunction({
-    show: false
-  });
+ 
   
         ZoomMtg.join({
           meetingNumber: meetingConfig.meetingNumber,
